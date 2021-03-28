@@ -501,34 +501,34 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 'admin', '9c80a23bc64dc2e218b13eec4847e11b', '管理员', '15515515515', '13112312131', '410306199202020020', '1992-02-02', NULL, 1, 0, 0, NULL, 0, '2021-03-22 10:35:52', '2018-05-11 09:38:54', 0);
-INSERT INTO `sys_user` VALUES (11, 'role1', '9c80a23bc64dc2e218b13eec4847e11b', '角色测试1', '', '18123245230', '', '1970-01-01', '', 4, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-25 12:30:22', 0);
-INSERT INTO `sys_user` VALUES (12, 'role2', '9c80a23bc64dc2e218b13eec4847e11b', '角色测试2', '', '18121451241', '', NULL, '', 4, 0, 0, NULL, 1, '2019-08-01 10:04:38', '2019-04-25 12:31:11', 0);
-INSERT INTO `sys_user` VALUES (13, 'lihaifan', '9c80a23bc64dc2e218b13eec4847e11b', 'lihaifan', '', '18399485774', '', NULL, '', 1, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-25 13:50:44', 0);
-INSERT INTO `sys_user` VALUES (14, 'lipeng', '9c80a23bc64dc2e218b13eec4847e11b', '李鹏1', '', '13937988294', '', NULL, '', 2, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-25 14:34:47', 0);
-INSERT INTO `sys_user` VALUES (15, 'huangwenli', '9c80a23bc64dc2e218b13eec4847e11b', '黄文丽', '', '15515515515', '', NULL, '', 16, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-26 10:05:05', 0);
-INSERT INTO `sys_user` VALUES (16, 'huangwenli1', '9c80a23bc64dc2e218b13eec4847e11b', '黄文丽', '', '15515515515', '', NULL, '', 15, 0, 0, NULL, 1, '2019-04-27 14:04:19', '2019-04-26 10:25:04', 0);
-INSERT INTO `sys_user` VALUES (17, 'zhangjiao', '9c80a23bc64dc2e218b13eec4847e11b', '张娇', '阿娇', '15670390391', '410305199102020020', '1991-02-02', '86484@qq.com', 19, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-04-26 14:37:23', 0);
-INSERT INTO `sys_user` VALUES (18, 'zhangjiao1', '9c80a23bc64dc2e218b13eec4847e11b', '张娇1', '', '15670390391', '', '2019-04-18', '6666@qq.com', 20, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-04-26 14:45:55', 0);
-INSERT INTO `sys_user` VALUES (19, 'zhenxiaocang', '9c80a23bc64dc2e218b13eec4847e11b', '珍小藏', '', '15670390391', '', NULL, '', 19, 0, 1, NULL, 1, '2019-09-09 08:34:35', '2019-04-26 14:46:57', 0);
-INSERT INTO `sys_user` VALUES (20, 'matengfei', '9c80a23bc64dc2e218b13eec4847e11b', '马腾飞', '', '15670390393', '', NULL, '', 19, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-04-26 14:47:24', 0);
-INSERT INTO `sys_user` VALUES (21, 'ceshi123', '9c80a23bc64dc2e218b13eec4847e11b', '测试人员', '', '18829938477', '', NULL, '', 1, 0, 1, NULL, 13, '2019-04-27 09:56:17', '2019-04-27 09:38:07', 1);
-INSERT INTO `sys_user` VALUES (22, 'zhangjingru', '9c80a23bc64dc2e218b13eec4847e11b', '张静如', '', '15600000000', '', NULL, '', 1, 0, 0, NULL, 1, '2019-09-04 09:06:47', '2019-04-28 14:05:03', 0);
-INSERT INTO `sys_user` VALUES (23, 'sdfsdfdsfsdfdsfdsf', '9c80a23bc64dc2e218b13eec4847e11b', 'werewr', '', '15698585858', '', NULL, '', 19, 0, 0, NULL, 1, '2019-09-05 16:13:03', '2019-04-28 16:26:27', 0);
-INSERT INTO `sys_user` VALUES (25, 'shq2019', '9c80a23bc64dc2e218b13eec4847e11b', 'shq', 'shq', '18798801298', '410281199309024040', '1993-09-02', '', 17, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-05-05 09:13:41', 0);
-INSERT INTO `sys_user` VALUES (26, 'zhangjiao666', '9c80a23bc64dc2e218b13eec4847e11b', 'tom我是五个字12', '', '15612345678', '', NULL, '', 18, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-05-05 15:34:10', 0);
-INSERT INTO `sys_user` VALUES (28, 'dfsfgds', '9c80a23bc64dc2e218b13eec4847e11b', 'fds', '', '15854127845', '', NULL, '', 22, 0, 1, NULL, 1, '2019-09-06 08:58:40', '2019-05-06 10:36:57', 0);
-INSERT INTO `sys_user` VALUES (29, 'abcabc', '9c80a23bc64dc2e218b13eec4847e11b', 'abccba', 'aaabac', '13311112222', '', NULL, '', 17, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-07-10 17:00:58', 0);
-INSERT INTO `sys_user` VALUES (30, 'gengweigang', '9c80a23bc64dc2e218b13eec4847e11b', '耿为刚', 'geng', '15038588418', '', NULL, '', 17, 0, 0, NULL, 1, '2019-08-08 14:35:51', '2019-08-08 14:35:51', 0);
-INSERT INTO `sys_user` VALUES (31, 'gengweigang1', '9c80a23bc64dc2e218b13eec4847e11b', '耿为刚1', '这是别名', '15038588418', '410322193312123232', '1933-12-12', '32@qq.com', 18, 0, 0, NULL, 30, '2019-08-23 09:27:22', '2019-08-23 09:25:50', 0);
-INSERT INTO `sys_user` VALUES (32, 'ceshi123', '9c80a23bc64dc2e218b13eec4847e11b', '测试', '测试', '15670702651', '', NULL, '', 17, 0, 0, NULL, 1, '2019-09-04 09:05:48', '2019-09-03 11:48:04', 0);
-INSERT INTO `sys_user` VALUES (33, 'ceshi321', '9c80a23bc64dc2e218b13eec4847e11b', '测试', '测试', '15670702651', '', NULL, '', 17, 0, 1, NULL, 1, '2019-09-03 15:51:16', '2019-09-03 11:49:17', 0);
-INSERT INTO `sys_user` VALUES (34, 'ceshi123321', '9c80a23bc64dc2e218b13eec4847e11b', '123', '', '15600000000', '', NULL, '', 22, 0, 0, NULL, 1, '2021-03-22 16:11:34', '2019-09-04 09:13:54', 0);
-INSERT INTO `sys_user` VALUES (35, 'guoqingfeng', '9c80a23bc64dc2e218b13eec4847e11b', '郭青枫', '', '15670702651', '', NULL, '', 18, 0, 0, NULL, 1, '2019-09-04 15:09:00', '2019-09-04 15:09:00', 0);
-INSERT INTO `sys_user` VALUES (36, 'li327263458', '9c80a23bc64dc2e218b13eec4847e11b', 'lipeng', '', '13937988294', '', NULL, '', 17, 0, 0, NULL, 1, '2019-09-09 17:01:39', '2019-09-09 17:01:39', 0);
-INSERT INTO `sys_user` VALUES (37, 'test123', '9c80a23bc64dc2e218b13eec4847e11b', 'test', '', '13211110201', '', NULL, '', 18, 0, 1, NULL, 1, '2019-11-14 16:08:08', '2019-11-08 09:32:39', 0);
-INSERT INTO `sys_user` VALUES (38, 'tiantian', '9c80a23bc64dc2e218b13eec4847e11b', '天天管理员', '', '13574502368', '', NULL, '', 17, 0, 0, NULL, 1, '2019-11-14 02:08:08', '2019-11-08 11:09:46', 0);
-INSERT INTO `sys_user` VALUES (39, 'wang13211111', '9c80a23bc64dc2e218b13eec4847e11b', 'ceshi111', 'dddd', '13244553212', '', NULL, '', 25, 0, 0, NULL, 38, '2019-11-15 17:14:34', '2019-11-15 17:03:04', 0);
+INSERT INTO `sys_user` VALUES (1, 'admin', 'd7acc7b9e862905cb5deb92013c6085f', '管理员', '15515515515', '13112312131', '410306199202020020', '1992-02-02', NULL, 1, 0, 0, NULL, 0, '2021-03-22 10:35:52', '2018-05-11 09:38:54', 0);
+INSERT INTO `sys_user` VALUES (11, 'role1', 'd7acc7b9e862905cb5deb92013c6085f', '角色测试1', '', '18123245230', '', '1970-01-01', '', 4, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-25 12:30:22', 0);
+INSERT INTO `sys_user` VALUES (12, 'role2', 'd7acc7b9e862905cb5deb92013c6085f', '角色测试2', '', '18121451241', '', NULL, '', 4, 0, 0, NULL, 1, '2019-08-01 10:04:38', '2019-04-25 12:31:11', 0);
+INSERT INTO `sys_user` VALUES (13, 'lihaifan', 'd7acc7b9e862905cb5deb92013c6085f', 'lihaifan', '', '18399485774', '', NULL, '', 1, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-25 13:50:44', 0);
+INSERT INTO `sys_user` VALUES (14, 'lipeng', 'd7acc7b9e862905cb5deb92013c6085f', '李鹏1', '', '13937988294', '', NULL, '', 2, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-25 14:34:47', 0);
+INSERT INTO `sys_user` VALUES (15, 'huangwenli', 'd7acc7b9e862905cb5deb92013c6085f', '黄文丽', '', '15515515515', '', NULL, '', 16, 0, 0, NULL, 1, '2019-04-27 09:56:17', '2019-04-26 10:05:05', 0);
+INSERT INTO `sys_user` VALUES (16, 'huangwenli1', 'd7acc7b9e862905cb5deb92013c6085f', '黄文丽', '', '15515515515', '', NULL, '', 15, 0, 0, NULL, 1, '2019-04-27 14:04:19', '2019-04-26 10:25:04', 0);
+INSERT INTO `sys_user` VALUES (17, 'zhangjiao', 'd7acc7b9e862905cb5deb92013c6085f', '张娇', '阿娇', '15670390391', '410305199102020020', '1991-02-02', '86484@qq.com', 19, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-04-26 14:37:23', 0);
+INSERT INTO `sys_user` VALUES (18, 'zhangjiao1', 'd7acc7b9e862905cb5deb92013c6085f', '张娇1', '', '15670390391', '', '2019-04-18', '6666@qq.com', 20, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-04-26 14:45:55', 0);
+INSERT INTO `sys_user` VALUES (19, 'zhenxiaocang', 'd7acc7b9e862905cb5deb92013c6085f', '珍小藏', '', '15670390391', '', NULL, '', 19, 0, 1, NULL, 1, '2019-09-09 08:34:35', '2019-04-26 14:46:57', 0);
+INSERT INTO `sys_user` VALUES (20, 'matengfei', 'd7acc7b9e862905cb5deb92013c6085f', '马腾飞', '', '15670390393', '', NULL, '', 19, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-04-26 14:47:24', 0);
+INSERT INTO `sys_user` VALUES (21, 'ceshi123', 'd7acc7b9e862905cb5deb92013c6085f', '测试人员', '', '18829938477', '', NULL, '', 1, 0, 1, NULL, 13, '2019-04-27 09:56:17', '2019-04-27 09:38:07', 1);
+INSERT INTO `sys_user` VALUES (22, 'zhangjingru', 'd7acc7b9e862905cb5deb92013c6085f', '张静如', '', '15600000000', '', NULL, '', 1, 0, 0, NULL, 1, '2019-09-04 09:06:47', '2019-04-28 14:05:03', 0);
+INSERT INTO `sys_user` VALUES (23, 'sdfsdfdsfsdfdsfdsf', 'd7acc7b9e862905cb5deb92013c6085f', 'werewr', '', '15698585858', '', NULL, '', 19, 0, 0, NULL, 1, '2019-09-05 16:13:03', '2019-04-28 16:26:27', 0);
+INSERT INTO `sys_user` VALUES (25, 'shq2019', 'd7acc7b9e862905cb5deb92013c6085f', 'shq', 'shq', '18798801298', '410281199309024040', '1993-09-02', '', 17, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-05-05 09:13:41', 0);
+INSERT INTO `sys_user` VALUES (26, 'zhangjiao666', 'd7acc7b9e862905cb5deb92013c6085f', 'tom我是五个字12', '', '15612345678', '', NULL, '', 18, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-05-05 15:34:10', 0);
+INSERT INTO `sys_user` VALUES (28, 'dfsfgds', 'd7acc7b9e862905cb5deb92013c6085f', 'fds', '', '15854127845', '', NULL, '', 22, 0, 1, NULL, 1, '2019-09-06 08:58:40', '2019-05-06 10:36:57', 0);
+INSERT INTO `sys_user` VALUES (29, 'abcabc', 'd7acc7b9e862905cb5deb92013c6085f', 'abccba', 'aaabac', '13311112222', '', NULL, '', 17, 0, 0, NULL, 1, '2019-08-05 16:33:57', '2019-07-10 17:00:58', 0);
+INSERT INTO `sys_user` VALUES (30, 'gengweigang', 'd7acc7b9e862905cb5deb92013c6085f', '耿为刚', 'geng', '15038588418', '', NULL, '', 17, 0, 0, NULL, 1, '2019-08-08 14:35:51', '2019-08-08 14:35:51', 0);
+INSERT INTO `sys_user` VALUES (31, 'gengweigang1', 'd7acc7b9e862905cb5deb92013c6085f', '耿为刚1', '这是别名', '15038588418', '410322193312123232', '1933-12-12', '32@qq.com', 18, 0, 0, NULL, 30, '2019-08-23 09:27:22', '2019-08-23 09:25:50', 0);
+INSERT INTO `sys_user` VALUES (32, 'ceshi123', 'd7acc7b9e862905cb5deb92013c6085f', '测试', '测试', '15670702651', '', NULL, '', 17, 0, 0, NULL, 1, '2019-09-04 09:05:48', '2019-09-03 11:48:04', 0);
+INSERT INTO `sys_user` VALUES (33, 'ceshi321', 'd7acc7b9e862905cb5deb92013c6085f', '测试', '测试', '15670702651', '', NULL, '', 17, 0, 1, NULL, 1, '2019-09-03 15:51:16', '2019-09-03 11:49:17', 0);
+INSERT INTO `sys_user` VALUES (34, 'ceshi123321', 'd7acc7b9e862905cb5deb92013c6085f', '123', '', '15600000000', '', NULL, '', 22, 0, 0, NULL, 1, '2021-03-22 16:11:34', '2019-09-04 09:13:54', 0);
+INSERT INTO `sys_user` VALUES (35, 'guoqingfeng', 'd7acc7b9e862905cb5deb92013c6085f', '郭青枫', '', '15670702651', '', NULL, '', 18, 0, 0, NULL, 1, '2019-09-04 15:09:00', '2019-09-04 15:09:00', 0);
+INSERT INTO `sys_user` VALUES (36, 'li327263458', 'd7acc7b9e862905cb5deb92013c6085f', 'lipeng', '', '13937988294', '', NULL, '', 17, 0, 0, NULL, 1, '2019-09-09 17:01:39', '2019-09-09 17:01:39', 0);
+INSERT INTO `sys_user` VALUES (37, 'test123', 'd7acc7b9e862905cb5deb92013c6085f', 'test', '', '13211110201', '', NULL, '', 18, 0, 1, NULL, 1, '2019-11-14 16:08:08', '2019-11-08 09:32:39', 0);
+INSERT INTO `sys_user` VALUES (38, 'tiantian', 'd7acc7b9e862905cb5deb92013c6085f', '天天管理员', '', '13574502368', '', NULL, '', 17, 0, 0, NULL, 1, '2019-11-14 02:08:08', '2019-11-08 11:09:46', 0);
+INSERT INTO `sys_user` VALUES (39, 'wang13211111', 'd7acc7b9e862905cb5deb92013c6085f', 'ceshi111', 'dddd', '13244553212', '', NULL, '', 25, 0, 0, NULL, 38, '2019-11-15 17:14:34', '2019-11-15 17:03:04', 0);
 
 -- ----------------------------
 -- Table structure for sys_user_login_log

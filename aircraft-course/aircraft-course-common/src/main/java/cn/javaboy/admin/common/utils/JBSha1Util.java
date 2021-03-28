@@ -5,6 +5,8 @@ package cn.javaboy.admin.common.utils;
  * @Description:
  */
 
+import cn.javaboy.admin.common.domain.constant.CommonConst;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -23,7 +25,8 @@ public class JBSha1Util {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         String pwd = "admin";
         String pwdAfterSha1 = JBSha1Util.getSha1(pwd.getBytes());
-        System.out.println("原始密码："+pwd);
+        String s = JBDigestUtil.encryptPassword(CommonConst.Password.SALT_FORMAT, pwdAfterSha1);
+        System.out.println("原始密码："+s);
         System.out.println("sha1加密："+pwdAfterSha1);
     }
 }

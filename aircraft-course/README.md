@@ -51,4 +51,4 @@ aircraft-course-web
 
 ####前端
 1. 执行npm install
-2. 使用admin/123456进行登录
+2. 使用admin/admin进行登录

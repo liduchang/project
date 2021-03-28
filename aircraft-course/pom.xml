@@ -38,8 +38,8 @@
 
 	<modules>
 		<module>aircraft-course-dao</module>
-		<module>iab-admin-web</module> <!-- controller层模块 -->
-		<module>iab-admin-service</module> <!-- service和dao层模块 -->
+		<module>aircraft-course-web</module> <!-- controller层模块 -->
+		<module>aircraft-course-service</module> <!-- service和dao层模块 -->
 		<module>aircraft-course-common</module> <!-- 公共模块 -->
 	</modules>
 
