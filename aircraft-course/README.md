@@ -2,7 +2,7 @@
 #### 公共模块（iab-admin-common）
 ```text
 java...
-   └──iab-admin-common
+   └──aircraft-course-common
         ├── anno        通用注解
         ├── context     上下文相关
         ├── db          数据源
@@ -15,27 +15,27 @@ java...
         └── validator   自定义校验相关
 ```
 
-#### dao模块（iab-admin-dao）
+#### dao模块（aircraft-course-dao）
 ```text
-iab-admin-dao
+aircraft-course-dao
 └──  dao                    dao层
 ```
 
-#### service模块（iab-admin-service）
+#### service模块（aircraft-course-service）
 ```text
-iab-admin-service
+aircraft-course-service
 └──  service                service层
 ```
 
-#### sql文件（iab-admin-sql）
+#### sql文件（aircraft-course-sql）
 ```text
-iab-admin-sql
+aircraft-course-sql
 └──  sql                    通用sql文件
 ```
 
 #### web模块（iab-admin-web）
 ```text
-iab-admin-web
+aircraft-course-web
 ├── support        支撑模块
     └── aspect             切面
     └── config             配置
@@ -45,9 +45,9 @@ iab-admin-web
 
 ### 快速启动
 ####后端
-1. 先执行iab-admin-sql下的sql文件
+1. 先执行aircraft-course-sql下的sql文件
 2. 本机安装redis，并配置redis的host信息为自己的ip以及密码
-3. 启动iab-admin-web下的IabAdminApplication启动类
+3. 启动aircraft-course-web下的AircraftCourseApplication启动类
 
 ####前端
 1. 执行npm install
