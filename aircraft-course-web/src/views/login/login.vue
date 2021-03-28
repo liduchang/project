@@ -6,8 +6,8 @@
   <div class="login">
     <div class="content">
       <header class="logo center">
-        <img alt
-             src="../../assets/images/login-logo.png" />
+        <h1>Aircraft Course</h1>
+        <!-- <img alt src="../../assets/images/login-logo.png" /> -->
       </header>
       <div class="form-con">
         <login-form @on-success-valid="handleSubmit"></login-form>
