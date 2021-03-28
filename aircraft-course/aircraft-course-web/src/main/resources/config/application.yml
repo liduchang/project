@@ -1,0 +1,32 @@
+project:
+  name : iab-admin
+
+server:
+  port: 9001
+  servlet:
+    context-path: /iab-admin
+
+spring:
+  profiles:
+    active: 'dev'
+
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+#  mapper-locations: classpath:/mapper/*/*.xml
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/*/*.xml
+  type-aliases-package: cn.javaboy.admin.common.domain.*.entity
+
+jwt:
+  key: smart-admin-jwt-key
+
+smart-reload:
+  thread-count: 1
+  time-interval: 300
+
+access-control-allow-origin: '*'

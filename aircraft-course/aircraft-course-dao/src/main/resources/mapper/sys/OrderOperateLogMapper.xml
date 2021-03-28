@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javaboy.admin.dao.sys.OrderOperateLogDao">
+    <resultMap id="orderOperateLogSaveDTOMap" type="cn.javaboy.admin.common.domain.sys.entity.OrderOperateLogEntity"></resultMap>
+
+
+    <select id="listOrderOperateLogsByOrderTypeAndOrderId" resultMap="orderOperateLogSaveDTOMap">
+        select * from sys_order_operate_log where order_id= #{orderId}
+        AND order_type IN
+        <foreach collection="orderTypeList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+        order by id desc
+    </select>
+
+    <select id="listOrderOperateLogsByOrderTypeAndOrderIds" resultMap="orderOperateLogSaveDTOMap">
+        select * from sys_order_operate_log where
+        order_id IN
+        <foreach collection="orderIds" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+        AND order_type IN
+        <foreach collection="orderTypeList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+        order by id desc
+    </select>
+
+
+
+    <insert id="batchInsert" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.List">
+        INSERT INTO sys_order_operate_log (order_id,order_type, operate_type, operate_content, operate_remark, user_id, user_name,ext_data,update_time,create_time) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.orderId},
+            #{item.orderType},
+            #{item.operateType},
+            #{item.operateContent},
+            #{item.operateRemark},
+            #{item.userId},
+            #{item.userName},
+            #{item.extData},
+            #{item.updateTime}
+            #{item.createTime}
+            )
+        </foreach>
+    </insert>
+
+
+</mapper>

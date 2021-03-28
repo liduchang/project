@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javaboy.admin.dao.sys.RoleDao">
+
+    <resultMap id="RoleEntity" type="cn.javaboy.admin.common.domain.sys.entity.RoleEntity"></resultMap>
+
+
+    <sql id="baseSql">
+        r.id,
+        r.role_name,
+        r.remark,
+        r.update_time,
+        r.create_time
+    </sql>
+
+
+    <select id="getByRoleName" resultMap="RoleEntity">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_role r
+        WHERE
+        r.role_name = #{roleName}
+    </select>
+
+</mapper>

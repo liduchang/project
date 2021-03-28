@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javaboy.admin.dao.sys.UserDao">
+    
+    <resultMap id="UserDTO" type="cn.javaboy.admin.common.domain.sys.dto.UserDTO"></resultMap>
+
+    <resultMap id="UserVO" type="cn.javaboy.admin.common.domain.sys.vo.UserVO"></resultMap>
+
+    <sql id="baseSql">
+        e.id,
+        e.login_name,
+        e.login_pwd,
+        e.actual_name,
+        e.nick_name,
+        e.phone,
+        e.id_card,
+        e.birthday,
+        e.email,
+        e.department_id,
+        e.is_leave,
+        e.is_disabled,
+        e.remark,
+        e.is_delete,
+        e.update_time,
+        e.create_time
+    </sql>
+
+    <select id="selectUserList" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>,
+        d.name AS department_name
+        FROM
+        sys_user e
+        LEFT JOIN sys_department d ON d.id = e.department_id
+        <where>
+            <if test="queryDTO.phone != null and queryDTO.phone != ''">
+                <bind name="likephone" value=" '%' + queryDTO.phone +'%' "></bind>
+                AND e.actual_name like #{likephone}
+            </if>
+            <if test="queryDTO.actualName != null and queryDTO.actualName != ''">
+                <bind name="likeActualName" value=" '%' + queryDTO.actualName +'%' "></bind>
+                AND e.actual_name like #{likeActualName}
+            </if>
+            <if test="queryDTO.keyword != null and queryDTO.keyword != ''">
+                <bind name="likeName" value=" '%' + queryDTO.keyword +'%' "></bind>
+                AND (e.actual_name like #{likeName} or e.nick_name like #{likeName} or e.phone like #{likeName})
+            </if>
+
+            <if test="queryDTO.departmentId != null">
+                AND e.department_id = #{queryDTO.departmentId}
+            </if>
+            <if test="queryDTO.isLeave != null">
+                AND e.is_leave = #{queryDTO.isLeave}
+            </if>
+            <if test="queryDTO.isDisabled != null">
+                AND e.is_disabled = #{queryDTO.isDisabled}
+            </if>
+            <if test="queryDTO.isDelete != null">
+                AND e.is_delete = #{queryDTO.isDelete}
+            </if>
+            <if test="queryDTO.userIds != null and queryDTO.userIds.size > 0">
+                AND e.id IN
+                <foreach collection="queryDTO.userIds" open="(" close= ")" item="item" separator=","  >
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        order by e.create_time desc
+    </select>
+
+
+    <update id="batchUpdateStatus">
+        UPDATE sys_user e
+        set e.is_disabled = #{isDisabled}
+        WHERE id in
+        <foreach collection="userIds" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <select id="login" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        WHERE
+        e.login_name = #{loginName} and e.login_pwd = #{loginPwd}
+    </select>
+
+
+    <select id="getByLoginName" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        WHERE
+        e.login_name = #{loginName} and e.is_disabled = #{isDisabled}
+    </select>
+
+
+    <select id="getByPhone" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        WHERE
+        e.phone = #{phone} and e.is_disabled = #{isDisabled}
+    </select>
+
+
+    <select id="listAll" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        order by e.create_time desc
+    </select>
+
+    <select id="countByDepartmentId" resultType="integer">
+        SELECT
+        count(1)
+        FROM
+        sys_user e
+        WHERE
+        e.department_id = #{depId}
+        <if test="deleteFlag != null">
+            AND e.is_delete = #{deleteFlag}
+        </if>
+    </select>
+
+
+    <select id="getUserIdByDeptId" resultMap="UserVO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        WHERE
+        e.department_id = #{departmentId}
+        order by e.create_time desc
+    </select>
+
+
+    <select id="getUserIdByDeptIds" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        WHERE
+        e.department_id IN
+        <foreach collection="departmentIds" item="item" open="("  close=")" separator=",">
+            #{item}
+        </foreach>
+        order by e.create_time desc
+    </select>
+
+    <select id="getUserByIds" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        where e.id IN
+        <foreach collection="ids" item="item" open="("  close=")"  separator=",">
+            #{item}
+        </foreach>
+        order by e.create_time desc
+    </select>
+
+
+    <select id="getUserById" resultMap="UserDTO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_user e
+        where e.id = #{id}
+    </select>
+
+    <update id="updatePassword">
+         UPDATE  sys_user
+        SET login_pwd = #{password}
+        WHERE id = #{userId}
+    </update>
+
+    <select id="selectAll" resultMap="UserVO">
+        SELECT
+        <include refid="baseSql"></include>
+        FROM
+        sys_department e
+    </select>
+
+
+</mapper>

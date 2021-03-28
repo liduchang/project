@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javaboy.admin.dao.sys.RoleUserDao">
+
+    <resultMap id="UserDTO" type="cn.javaboy.admin.common.domain.sys.dto.UserDTO"></resultMap>
+
+    <sql id="baseSql">
+        er.id,
+        er.role_id,
+        er.user_id,
+        er.update_time,
+        er.create_time
+    </sql>
+
+
+    <select id="selectRoleIdByUserId" resultType="java.lang.Long">
+        SELECT
+        er.role_id
+        FROM
+        sys_role_user er
+        WHERE
+        er.user_id = #{userId}
+    </select>
+
+
+    <select id="selectUserByNamePage" resultMap="UserDTO">
+        SELECT
+        e.id,
+        e.login_name,
+        e.login_pwd,
+        e.actual_name,
+        e.nick_name,
+        e.phone,
+        e.id_card,
+        e.birthday,
+        e.email,
+        e.department_id,
+        e.is_leave,
+        e.is_disabled,
+        e.remark,
+        e.update_time,
+        e.create_time
+        FROM
+        sys_role_user er
+        left join sys_user e on er.user_id = e.id
+        left join sys_role r on er.role_id = r.id
+        <where>
+            <if test="queryDTO.roleName != null and queryDTO.roleName != ''">
+                <bind name="likeRoleName" value=" '%' + queryDTO.roleName +'%' "></bind>
+                AND r.role_name like #{likeRoleName}
+            </if>
+            <if test="queryDTO.roleId != null">
+                AND er.role_id = #{queryDTO.roleId}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectUserByRoleId" resultMap="UserDTO">
+        SELECT
+            e.id,
+            e.login_name,
+            e.login_pwd,
+            e.actual_name,
+            e.nick_name,
+            e.phone,
+            e.id_card,
+            e.birthday,
+            e.email,
+            e.department_id,
+            e.is_leave,
+            e.is_disabled,
+            e.remark,
+            e.update_time,
+            e.create_time
+        FROM
+        sys_role_user er
+        left join sys_user e on er.user_id = e.id
+        WHERE
+        er.role_id = #{roleId}
+    </select>
+
+
+    <delete id="deleteByUserId">
+        DELETE FROM sys_role_user
+        WHERE user_id = #{userId}
+    </delete>
+
+
+    <delete id="deleteByRoleId">
+        DELETE FROM sys_role_user
+        WHERE role_id = #{roleId}
+    </delete>
+
+    <delete id="deleteByUserIdRoleId">
+        DELETE FROM sys_role_user
+        WHERE role_id = #{roleId} and user_id = #{userId}
+    </delete>
+
+
+    <delete id="batchDeleteUserRole">
+        DELETE FROM sys_role_user
+        WHERE role_id = #{roleId} and user_id in
+        <foreach collection="userIds" item="item" open="(" close= ")"  separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+    <insert id="batchInsert" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.List">
+        INSERT INTO sys_role_user (role_id, user_id, update_time, create_time) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.roleId},
+            #{item.userId},
+            now(),
+            now()
+            )
+        </foreach>
+    </insert>
+
+
+</mapper>

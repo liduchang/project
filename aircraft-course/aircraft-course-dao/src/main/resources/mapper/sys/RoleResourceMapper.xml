@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javaboy.admin.dao.sys.RoleResourceDao">
+
+    <resultMap id="RoleResourceEntity"
+               type="cn.javaboy.admin.common.domain.sys.entity.RoleResourceEntity"></resultMap>
+
+    <resultMap id="ResourceEntity"
+               type="cn.javaboy.admin.common.domain.sys.entity.ResourceEntity"></resultMap>
+
+    <sql id="baseSql">
+        rp.id,
+        rp.role_id,
+        rp.privilege_key,
+        rp.update_time,
+        rp.create_time
+    </sql>
+
+    <delete id="deleteByRoleId">
+        DELETE FROM sys_role_resource
+        WHERE role_id = #{roleId}
+    </delete>
+
+    <delete id="deleteByPrivilegeKey">
+        DELETE FROM sys_role_resource
+        WHERE privilege_key in
+        <foreach collection="privilegeKeyList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+
+    <insert id="batchInsert" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.List">
+        INSERT INTO sys_role_resource (role_id, privilege_key, update_time, create_time) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.roleId},
+                #{item.privilegeKey},
+                now(),
+                now()
+            )
+        </foreach>
+    </insert>
+
+
+
+    <select id="listByRoleIds" resultMap="ResourceEntity">
+        SELECT DISTINCT p.*
+        FROM
+        sys_resource p
+        left JOIN sys_role_resource rp on p.key = rp.privilege_key
+        WHERE
+        rp.role_id IN
+        <foreach collection="roleIds" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+        order by p.create_time desc
+    </select>
+
+    <select id="listByRoleId" resultMap="ResourceEntity">
+        SELECT p.*
+        FROM
+        sys_resource p
+        left JOIN sys_role_resource rp on p.key = rp.privilege_key
+        WHERE
+        rp.role_id = #{roleId}
+
+    </select>
+
+
+</mapper>
